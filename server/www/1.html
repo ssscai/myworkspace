@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box" style="width:1000px;height:300px;background:yellowgreen;"></div>
+    <script src="../libs/my-fetch.js"></script>
+    <script>
+        window.onload = function () {
+            fetch(
+                    'https://h5.ele.me/restapi/ugc/v3/restaurants/156905126/ratings?has_content=true&offset=0&limit=8'
+                )
+                .then(result => {
+                    let {
+                        buffer,
+                        headers
+                    } = result;
+                    console.log(buffer.length)
+                    console.log(headers['content-length'])
+                    console.log(buffer.toString())
+                }, err => {
+
+                })
+        }
+    </script>
+</body>
+
+</html>
